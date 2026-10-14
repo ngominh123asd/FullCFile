@@ -15,23 +15,28 @@
   <strong>FileForge</strong> là hệ thống chuyển đổi tài liệu toàn diện kết hợp công nghệ OCR trí tuệ nhân tạo (PaddleOCR PP-Structure, SLANet, Tesseract Best & VietOCR), hỗ trợ xử lý chuyên sâu cho tiếng Việt và tiếng Anh. Dự án cung cấp đầy đủ giao diện Web Studio hiện đại (phong cách Glassmorphism / Aurora Theme) cùng hệ thống RESTful API chuẩn doanh nghiệp.
 </p>
 
+<p align="center">
+  <img src="docs/images/landing-page.png" alt="FileForge - Intelligent Document Converter & OCR Platform" width="100%">
+</p>
+
 ---
 
 ## 📑 Mục lục
 
 - [1. Giới thiệu & Tính năng nổi bật](#1-giới-thiệu--tính-năng-nổi-bật)
-- [2. Ma trận chuyển đổi định dạng](#2-ma-trận-chuyển-đổi-định-dạng)
-- [3. Pipeline xử lý OCR & Phục hồi định dạng](#3-pipeline-xử-lý-ocr--phục-hồi-định-dạng)
-- [4. Kiến trúc hệ thống](#4-kiến-trúc-hệ-thống)
-- [5. Công nghệ sử dụng](#5-công-nghệ-sử-dụng)
-- [6. Hướng dẫn cài đặt & Khởi chạy](#6-hướng-dẫn-cài-đặt--khởi-chạy)
+- [2. Ảnh chụp giao diện thực tế](#2-ảnh-chụp-giao-diện-thực-tế)
+- [3. Ma trận chuyển đổi định dạng](#3-ma-trận-chuyển-đổi-định-dạng)
+- [4. Pipeline xử lý OCR & Phục hồi định dạng](#4-pipeline-xử-lý-ocr--phục-hồi-định-dạng)
+- [5. Kiến trúc hệ thống](#5-kiến-trúc-hệ-thống)
+- [6. Công nghệ sử dụng](#6-công-nghệ-sử-dụng)
+- [7. Hướng dẫn cài đặt & Khởi chạy](#7-hướng-dẫn-cài-đặt--khởi-chạy)
   - [Khởi chạy nhanh với Docker](#khởi-chạy-nhanh-với-docker-khuyến-nghị)
   - [Cài đặt thủ công (Local Development)](#cài-đặt-thủ-công-local-development)
   - [Cài đặt mô hình OCR (Tùy chọn)](#cài-đặt-mô-hình-ocr-tùy-chọn)
-- [7. Tài liệu REST API](#7-tài-liệu-rest-api)
-- [8. Cấu trúc thư mục dự án](#8-cấu-trúc-thư-mục-dự-án)
-- [9. Roadmap phát triển](#9-roadmap-phát-triển)
-- [10. Giấy phép](#10-giấy-phép)
+- [8. Tài liệu REST API](#8-tài-liệu-rest-api)
+- [9. Cấu trúc thư mục dự án](#9-cấu-trúc-thư-mục-dự-án)
+- [10. Roadmap phát triển](#10-roadmap-phát-triển)
+- [11. Giấy phép](#11-giấy-phép)
 
 ---
 
@@ -60,7 +65,23 @@
 
 ---
 
-## 2. Ma trận chuyển đổi định dạng
+## 2. Ảnh chụp giao diện thực tế
+
+### 🚀 Bàn làm việc & Băng tải tiếp nhận tài liệu (Workspace Console)
+Giao diện làm việc trực quan hỗ trợ kéo thả tệp, phân luồng chuẩn hóa định dạng AST và tùy chọn chuyển đổi tức thì:
+<p align="center">
+  <img src="docs/images/workspace-console.png" alt="FileForge Workspace Console" width="100%">
+</p>
+
+### 📄 Trình xem trước & Đối chiếu văn bản thông minh (Smart Document Preview)
+Xem trước kết quả trực quan ngay trên nền tảng với độ chính xác cao về bố cục quy chuẩn, font chữ và metadata chi tiết:
+<p align="center">
+  <img src="docs/images/document-preview.png" alt="FileForge Document Preview" width="100%">
+</p>
+
+---
+
+## 3. Ma trận chuyển đổi định dạng
 
 Hệ thống hỗ trợ chuyển đổi linh hoạt giữa nhiều định dạng văn bản, dữ liệu và hình ảnh:
 
@@ -78,7 +99,7 @@ Hệ thống hỗ trợ chuyển đổi linh hoạt giữa nhiều định dạn
 
 ---
 
-## 3. Pipeline xử lý OCR & Phục hồi định dạng
+## 4. Pipeline xử lý OCR & Phục hồi định dạng
 
 ```
                              HÌNH ẢNH / TÀI LIỆU QUÉT
@@ -121,7 +142,7 @@ Hệ thống hỗ trợ chuyển đổi linh hoạt giữa nhiều định dạn
 
 ---
 
-## 4. Kiến trúc hệ thống
+## 5. Kiến trúc hệ thống
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -157,7 +178,7 @@ Hệ thống hỗ trợ chuyển đổi linh hoạt giữa nhiều định dạn
 
 ---
 
-## 5. Công nghệ sử dụng
+## 6. Công nghệ sử dụng
 
 | Phân hệ | Công nghệ | Chi tiết sử dụng |
 | :--- | :--- | :--- |
@@ -172,7 +193,7 @@ Hệ thống hỗ trợ chuyển đổi linh hoạt giữa nhiều định dạn
 
 ---
 
-## 6. Hướng dẫn cài đặt & Khởi chạy
+## 7. Hướng dẫn cài đặt & Khởi chạy
 
 ### Khởi chạy nhanh với Docker (Khuyến nghị)
 
@@ -258,7 +279,7 @@ docker compose restart backend celery-worker
 
 ---
 
-## 7. Tài liệu REST API
+## 8. Tài liệu REST API
 
 API cung cấp đầy đủ các endpoint xử lý tài liệu. Dưới đây là các tác vụ tiêu biểu:
 
@@ -313,7 +334,7 @@ curl -X GET "http://localhost:8000/api/v1/jobs/<JOB_ID>" \
 
 ---
 
-## 8. Cấu trúc thư mục dự án
+## 9. Cấu trúc thư mục dự án
 
 ```
 FullCFile/
@@ -349,7 +370,7 @@ FullCFile/
 
 ---
 
-## 9. Roadmap phát triển
+## 10. Roadmap phát triển
 
 - [x] **Giai đoạn 1**: Xây dựng kiến trúc cốt lõi FastAPI + Celery + React.
 - [x] **Giai đoạn 2**: Tích hợp module chuyển đổi đa định dạng (Markdown, DOCX, PDF, XLSX, JSON).
@@ -359,6 +380,6 @@ FullCFile/
 
 ---
 
-## 10. Giấy phép
+## 11. Giấy phép
 
 Dự án được phân phối dưới giấy phép **Apache License 2.0**. Mọi cá nhân và tổ chức đều có quyền tự do sử dụng, chỉnh sửa và phân phối theo các điều khoản của Apache 2.0. Chi tiết xem tại tệp [LICENSE](LICENSE).

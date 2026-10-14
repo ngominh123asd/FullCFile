@@ -94,8 +94,8 @@ fileforge_outputs/
 openapi_out.json
 backend/inspect_p0_words.py
 
-# Allow specific documentation or asset images if needed later
-# !docs/images/*.png
+# Allow documentation images
+!docs/images/*
 
 # IDE and OS files
 .vscode/
