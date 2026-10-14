@@ -43,15 +43,18 @@
 ## 1. Giới thiệu & Tính năng nổi bật
 
 ### 📄 Chuyển đổi tài liệu đa năng (Document Conversion)
+
 - Hỗ trợ chuyển đổi qua lại giữa: **Markdown, DOCX, PDF, HTML, TXT, RTF**.
 - Tự động bảo toàn cấu trúc phân cấp (Heading 1-6), font chữ, màu sắc, danh sách đa cấp, blockquote và bảng biểu phức tạp.
 - Xuất bản PDF chất lượng in ấn thông qua **WeasyPrint** và **LibreOffice**.
 
 ### 📊 Xử lý bảng tính linh hoạt (Spreadsheet Engine)
+
 - Hỗ trợ định dạng: **XLSX, CSV, JSON, ODS**.
 - Trích xuất dữ liệu bảng lồng nhau (nested JSON), tự động nhận diện kiểu dữ liệu (Date, Currency, Number).
 
 ### 🔍 OCR Studio thông minh (ML-Powered OCR)
+
 - **Bảo toàn định dạng ≥ 95%**: Không chỉ nhận diện chữ mà còn khôi phục nguyên vẹn cấu trúc văn bản gốc (vị trí tọa độ, canh lề, cỡ chữ, font serif / sans-serif).
 - **Phục hồi bảng biểu 1:1 (Table Structure Recovery)**: Ứng dụng mô hình **SLANet** nhận diện chính xác các ô bị merge (rowspan, colspan), đường viền bảng và xuất trực tiếp ra Word/Excel.
 - **Tối ưu tiếng Việt chuyên sâu**:
@@ -60,6 +63,7 @@
   - Hỗ trợ module nhận diện chữ viết tay (VietOCR) kèm cảnh báo highlight `needs_review` trên giao diện người dùng.
 
 ### ⚡ Xử lý bất đồng bộ & Hiệu năng cao
+
 - Xử lý hàng đợi tác vụ nền với **Celery + Redis**, hỗ trợ theo dõi tiến trình (Progress bar) theo thời gian thực.
 - Hỗ trợ Webhook tự động thông báo khi tác vụ hoàn thành.
 
@@ -68,12 +72,14 @@
 ## 2. Ảnh chụp giao diện thực tế
 
 ### 🚀 Bàn làm việc & Băng tải tiếp nhận tài liệu (Workspace Console)
+
 Giao diện làm việc trực quan hỗ trợ kéo thả tệp, phân luồng chuẩn hóa định dạng AST và tùy chọn chuyển đổi tức thì:
 <p align="center">
   <img src="docs/images/workspace-console.png" alt="FileForge Workspace Console" width="100%">
 </p>
 
 ### 📄 Trình xem trước & Đối chiếu văn bản thông minh (Smart Document Preview)
+
 Xem trước kết quả trực quan ngay trên nền tảng với độ chính xác cao về bố cục quy chuẩn, font chữ và metadata chi tiết:
 <p align="center">
   <img src="docs/images/document-preview.png" alt="FileForge Document Preview" width="100%">
@@ -115,14 +121,14 @@ Hệ thống hỗ trợ chuyển đổi linh hoạt giữa nhiều định dạn
                                        ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │ 2. Phân tích bố cục tài liệu (PP-Structure Layout Analysis)                 │
-│    • Phân đoạn các khối: Đoạn văn (Paragraph), Bảng (Table), Ảnh, Tiêu đề  │
+│    • Phân đoạn các khối: Đoạn văn (Paragraph), Bảng (Table), Ảnh, Tiêu đề   │
 │    • Phát hiện Header / Footer / Chú thích chân trang (Footnotes)           │
 │    • Nhận diện bố cục nhiều cột (Multi-column flow)                         │
 └──────────────────────────────────────┬──────────────────────────────────────┘
                                        │
                                        ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ 3. Nhận dạng ký tự & Cấu trúc bảng (Recognition Engine)                    │
+│ 3. Nhận dạng ký tự & Cấu trúc bảng (Recognition Engine)                     │
 │    • PaddleOCR DB++: Bóc tách text tiếng Anh (≥99%) & tiếng Việt (≥95%)     │
 │    • SLANet: Tái lập mạng lưới ma trận ô bảng, giải mã ô gộp (Merged Cells) │
 │    • VietOCR Transformer: Hỗ trợ bóc tách chữ viết tay (Handwriting)        │
@@ -212,6 +218,7 @@ docker compose up -d --build
 ```
 
 Sau khi khởi động thành công, các dịch vụ sẽ có sẵn tại:
+
 - **Giao diện Web**: [http://localhost:3000](http://localhost:3000)
 - **Tài liệu Swagger API**: [http://localhost:8000/docs](http://localhost:8000/docs)
 - **Trang quản trị MinIO**: [http://localhost:9001](http://localhost:9001) *(Tài khoản mặc định: `minioadmin` / `minioadmin123`)*
@@ -220,13 +227,15 @@ Sau khi khởi động thành công, các dịch vụ sẽ có sẵn tại:
 
 ### Cài đặt thủ công (Local Development)
 
-#### Yêu cầu hệ thống:
+#### Yêu cầu hệ thống
+
 - Python 3.11+
 - Node.js 18+ & npm
 - PostgreSQL 15+ & Redis 7+
 - LibreOffice & Pandoc *(nếu chạy module chuyển đổi DOCX/PDF)*
 
 #### Bước 1: Khởi chạy Backend
+
 ```bash
 cd backend
 
@@ -249,12 +258,14 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 Khởi chạy Celery Worker (ở một terminal khác):
+
 ```bash
 cd backend
 celery -A app.workers.celery_worker worker --loglevel=info
 ```
 
 #### Bước 2: Khởi chạy Frontend
+
 ```bash
 cd frontend
 
@@ -264,6 +275,7 @@ npm install
 # Khởi chạy Vite dev server
 npm run dev
 ```
+
 Mở trình duyệt tại [http://localhost:3000](http://localhost:3000) để sử dụng ứng dụng.
 
 ---
@@ -271,10 +283,12 @@ Mở trình duyệt tại [http://localhost:3000](http://localhost:3000) để s
 ### Cài đặt mô hình OCR (Tùy chọn)
 
 Để tăng cường độ chính xác cho tiếng Việt cổ / tài liệu scan mờ và chữ viết tay, bạn có thể tải thêm các model cục bộ:
+
 ```bash
 docker compose exec backend python scripts/setup_ocr_models.py
 docker compose restart backend celery-worker
 ```
+
 *Các mô hình được tải tự động theo checksum mã hóa SHA-256 đã kiểm duyệt.*
 
 ---
@@ -284,6 +298,7 @@ docker compose restart backend celery-worker
 API cung cấp đầy đủ các endpoint xử lý tài liệu. Dưới đây là các tác vụ tiêu biểu:
 
 ### 1. Tải tệp lên hệ thống
+
 ```bash
 curl -X POST "http://localhost:8000/api/v1/files/upload" \
   -H "Authorization: Bearer <YOUR_TOKEN>" \
@@ -291,6 +306,7 @@ curl -X POST "http://localhost:8000/api/v1/files/upload" \
 ```
 
 ### 2. Gửi yêu cầu chuyển đổi định dạng
+
 ```bash
 curl -X POST "http://localhost:8000/api/v1/convert" \
   -H "Authorization: Bearer <YOUR_TOKEN>" \
@@ -306,6 +322,7 @@ curl -X POST "http://localhost:8000/api/v1/convert" \
 ```
 
 ### 3. Phân tích bố cục & OCR tài liệu
+
 ```bash
 # Phân tích sơ bộ bố cục ảnh
 curl -X POST "http://localhost:8000/api/v1/ocr/analyze" \
@@ -327,6 +344,7 @@ curl -X POST "http://localhost:8000/api/v1/ocr/process" \
 ```
 
 ### 4. Kiểm tra trạng thái & Nhận kết quả
+
 ```bash
 curl -X GET "http://localhost:8000/api/v1/jobs/<JOB_ID>" \
   -H "Authorization: Bearer <YOUR_TOKEN>"
