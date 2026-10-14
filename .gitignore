@@ -1,0 +1,107 @@
+# Environments and secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+!.env.docker
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+artifacts/ocr-browser-env/
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+htmlcov/
+
+# Node & Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+*.tsbuildinfo
+.npm
+.eslintcache
+
+# Logs & Databases
+*.log
+*.sqlite
+*.sqlite3
+*.db
+
+# Temporary, data, diagnostics, and test artifacts
+artifacts/
+backend/diagnostics/
+.ocr-rebuild-backup/
+backend/models/
+models/
+uploads/
+fileforge_uploads/
+fileforge_outputs/
+
+# Binary installers & executables
+*.exe
+*.dll
+*.bin
+
+# Temporary test/sample files & debug output
+*.pdf
+*.docx
+*.xlsx
+*.csv
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.tiff
+*.bmp
+openapi_out.json
+backend/inspect_p0_words.py
+
+# Allow specific documentation or asset images if needed later
+# !docs/images/*.png
+
+# IDE and OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db

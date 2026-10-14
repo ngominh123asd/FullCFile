@@ -1,0 +1,10 @@
+{
+  "name": "docx-formatter",
+  "description": "Convert Markdown files to beautifully formatted DOCX documents",
+  "version": "1.0.0",
+  "author": {
+    "name": "Masuzu",
+    "email": "support@masuzu.com"
+  },
+  "category": "formatting"
+}

@@ -1,0 +1,66 @@
+# Core - FastAPI & Server
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.12
+
+# Auth (used for JWT even though not required for endpoints)
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# Database
+asyncpg==0.29.0
+sqlalchemy[asyncio]==2.0.35
+
+# Redis & Queue
+redis==5.1.1
+celery[redis]==5.4.0
+
+# Validation
+pydantic[email]==2.9.0
+pydantic-settings==2.5.2
+
+# File handling
+python-magic==0.4.27
+aiofiles==24.1.0
+
+# HTTP client
+httpx==0.27.2
+boto3==1.35.0
+
+# Utilities
+python-dotenv==1.0.1
+
+# Document Processing
+python-docx==1.1.2
+
+# Image Processing & Deep Learning OCR (CPU)
+Pillow==10.4.0
+numpy>=1.24.0
+opencv-python-headless>=4.8.0
+rapidocr_onnxruntime>=1.4.0
+rapid-layout>=1.2.1
+onnxruntime-gpu==1.19.2
+nvidia-cuda-runtime-cu12
+nvidia-cuda-nvrtc-cu12
+nvidia-cublas-cu12
+nvidia-cudnn-cu12
+nvidia-curand-cu12
+nvidia-cufft-cu12
+vietocr>=0.3.8
+pyvi>=0.1.1
+underthesea>=6.8.0
+reportlab>=4.0.0
+
+# Excel & Data
+openpyxl==3.1.5
+pandas>=2.2.0
+
+# PDF Rendering & Processing
+weasyprint>=60.0
+PyMuPDF>=1.24.0
+pdf2docx>=0.5.6
+pywin32>=306; platform_system == "Windows"
+
+# Development
+pytest==8.3.2
+pytest-asyncio==0.24.0
