@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/images/landing-page.png" alt="FileForge - Intelligent Document Converter & OCR Platform" width="100%">
+  <img src="docs/images/preview-landing.png" alt="FileForge - Intelligent Document Converter & OCR Platform" width="100%">
 </p>
 
 ---
@@ -75,14 +75,14 @@
 
 Giao diện làm việc trực quan hỗ trợ kéo thả tệp, phân luồng chuẩn hóa định dạng AST và tùy chọn chuyển đổi tức thì:
 <p align="center">
-  <img src="docs/images/workspace-console.png" alt="FileForge Workspace Console" width="100%">
+  <img src="docs/images/preview-workspace.png" alt="FileForge Workspace Console" width="100%">
 </p>
 
 ### 📄 Trình xem trước & Đối chiếu văn bản thông minh (Smart Document Preview)
 
 Xem trước kết quả trực quan ngay trên nền tảng với độ chính xác cao về bố cục quy chuẩn, font chữ và metadata chi tiết:
 <p align="center">
-  <img src="docs/images/document-preview.png" alt="FileForge Document Preview" width="100%">
+  <img src="docs/images/preview-document.png" alt="FileForge Document Preview" width="100%">
 </p>
 
 ---
